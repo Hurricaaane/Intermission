@@ -1,0 +1,69 @@
+globalconfig:
+  enable: true
+  display:
+    on_subscribe: '&bYou are now subscribed to &f%s&b.'
+    on_unsubscribe: '&cYou are now unsubscribed from &f%s&b.'
+    on_invalid: '&7You cannot perform this operation / You cannot change this subscription.'
+    on_info_forced: '&7%s&f: %s'
+    on_info_subbed: '&b%s&f: %s'
+    on_info_unsubbed: '&c%s&f: %s'
+    on_info_invalid: '&7You cannot obtain this information.'
+vendors:
+  announcements:
+    enable: true
+    description: 'General announcements.'
+    subscription_based:
+      enable: true
+      default: true
+      permission_to_change_subscription:
+       enable: true
+       node: intermission.admin
+    visibility:
+      enable: false
+      node: ''
+    display:
+      format: '&cAnnouncement&f: %s'
+      period: 900
+      shuffle: false
+      console: true
+    messages:
+    - announcements.txt
+  tips_forbeginners:
+    enable: true
+    description: 'Tips for beginners.'
+    subscription_based:
+      enable: true
+      default: true
+      permission_to_change_subscription:
+        enable: true
+        node: intermission.beginner
+    visibility:
+      enable: false
+      node: ''
+    display:
+      format: '&Did you know?&f: %s'
+      period: 900
+      delay: 450
+      shuffle: true
+      console: true
+    messages:
+    - tips_forbeginners.txt
+  tips_foradmins:
+    enable: true
+    description: 'Tips for administrators.'
+    subscription_based:
+      enable: true
+      default: true
+      permission_to_change_subscription:
+        enable: true
+        node: intermission.admin
+    visibility:
+      enable: true
+      node: intermission.admin
+    display:
+      format: '&aTip&f: %s'
+      period: 1800
+      shuffle: false
+      console: true
+    messages:
+    - tips_foradmins.txt

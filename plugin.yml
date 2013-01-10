@@ -1,0 +1,53 @@
+name: Intermission
+main: eu.ha3.bukkit.intermission.IntermissionPlugin
+version: 0
+description: >
+             Multi announcement plugin
+permissions:
+    intermission.user.list:
+        description: right to list
+        default: true
+    intermission.user.subscription:
+        description: right to alter subscription
+        default: true
+    intermission.user.information:
+        description: right to obtain information
+        default: true
+    intermission.admin.reloadconfig:
+        description: right to reload config
+        default: op
+    intermission.admin.reloadmessages:
+        description: right to reload messages
+        default: op
+    intermission.admin.displaynow:
+        description: right to force a message to display now
+        default: op
+commands:
+    intermission_list:
+        description: list all vendors available to you
+        permission: intermission.user.list
+        usage: intermission_list
+    intermission_subscribe:
+        description: subscribe to vendor
+        permission: intermission.user.subscription
+        usage: intermission_subscribe <vendor>
+    intermission_unsubscribe:
+        description: unsubscribe from vendor
+        permission: intermission.user.subscription
+        usage: intermission_subscribe <vendor>
+    intermission_info:
+        description: display information about a vendor
+        permission: intermission.user.info
+        usage: intermission_info <vendor>
+    intermission_reloadconfig:
+        description: reload configuration (rewinds messages to first, resets timing)
+        permission: intermission.admin.reloadconfig
+        usage: intermission_reloadconfig
+    intermission_reloadmessages:
+        description: reload messages (does not rewind messages to first, preserves timing, config.yml is not read)
+        permission: intermission.admin.reloadmessages
+        usage: intermission_reloadmessages
+    intermission_displaynow:
+        description: display a message now even if the vendor is not running
+        permission: intermission.admin.displaynow
+        usage: intermission_displaynow <vendor>
