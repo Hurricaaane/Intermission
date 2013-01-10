@@ -266,7 +266,7 @@ public class IntermissionPlugin extends JavaPlugin
 						{
 							if (ply.hasChosenSubscription(vendor.getName()))
 							{
-								if (vendor.shouldPlayerReceive(ply))
+								if (ply.isSubscribed(vendor.getName()))
 								{
 									sb.append("&b");
 								}
@@ -277,7 +277,7 @@ public class IntermissionPlugin extends JavaPlugin
 							}
 							else
 							{
-								if (ply.isSubscribed(vendor.getName()))
+								if (vendor.shouldPlayerReceive(ply))
 								{
 									sb.append("&3");
 								}
