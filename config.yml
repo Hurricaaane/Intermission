@@ -41,7 +41,7 @@ vendors:
       enable: false
       node: ''
     display:
-      format: '&Did you know?&f: %s'
+      format: '&aDid you know?&f: %s'
       period: 900
       delay: 450
       shuffle: true
