@@ -78,7 +78,7 @@ public class Vendor implements Runnable
 				.scheduleSyncRepeatingTask(
 					this.plugin, this,
 					20 * this.config.getLong("display.delay", this.config.getLong("display.period")),
-					this.config.getLong("display.period"));
+					20 * this.config.getLong("display.period"));
 		
 	}
 	
