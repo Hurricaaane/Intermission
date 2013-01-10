@@ -350,9 +350,6 @@ public class IntermissionPlugin extends JavaPlugin
 		
 		reloadConfig();
 		
-		if (!getConfig().getBoolean("globalconfig.enable"))
-			return;
-		
 		ConfigurationSection vendorsMapSection = getConfig().getConfigurationSection("vendors");
 		for (String vendorName : vendorsMapSection.getKeys(false))
 		{
@@ -361,6 +358,8 @@ public class IntermissionPlugin extends JavaPlugin
 			this.vendors.put(vendorName, vendor);
 		}
 		
+		if (!getConfig().getBoolean("globalconfig.enable"))
+			return;
 		startVendors();
 	}
 	
