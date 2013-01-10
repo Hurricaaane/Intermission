@@ -35,6 +35,11 @@ public class ConfigPlayer
 	
 	public void subscribeTo(String subscription)
 	{
+		if (this.config.getConfigurationSection("subscriptions") == null)
+		{
+			this.config.createSection("subscriptions");
+		}
+		
 		this.config.getConfigurationSection("subscriptions").set(subscription, true);
 		try
 		{
@@ -48,6 +53,11 @@ public class ConfigPlayer
 	
 	public void unsubscribeFrom(String subscription)
 	{
+		if (this.config.getConfigurationSection("subscriptions") == null)
+		{
+			this.config.createSection("subscriptions");
+		}
+		
 		this.config.getConfigurationSection("subscriptions").set(subscription, false);
 		try
 		{
@@ -61,11 +71,17 @@ public class ConfigPlayer
 	
 	public boolean hasChosenSubscription(String subscription)
 	{
+		if (this.config.getConfigurationSection("subscriptions") == null)
+			return false;
+		
 		return this.config.getConfigurationSection("subscriptions").get(subscription) != null;
 	}
 	
 	public boolean isSubscribed(String subscription)
 	{
+		if (this.config.getConfigurationSection("subscriptions") == null)
+			return false;
+		
 		return this.config.getConfigurationSection("subscriptions").getBoolean(subscription);
 	}
 }
