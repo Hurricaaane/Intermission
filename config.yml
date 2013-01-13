@@ -13,14 +13,9 @@ vendors:
     enable: true
     description: 'General announcements.'
     subscription_based:
-      enable: true
-      default: true
-      permission_to_change_subscription:
-       enable: true
-       node: intermission.admin
+      enable: false
     visibility:
       enable: false
-      node: ''
     display:
       format: '&cAnnouncement&f: %s'
       period: 900
@@ -28,29 +23,29 @@ vendors:
       console: true
     messages:
     - announcements.txt
-  tips_forbeginners:
+  tips:
     enable: true
-    description: 'Tips for beginners.'
+    description: 'Tips for players.'
     subscription_based:
       enable: true
       default: true
       permission_to_change_subscription:
         enable: true
-        node: intermission.beginner
+        node: intermission.tips
     visibility:
       enable: false
       node: ''
     display:
-      format: '&aDid you know?&f: %s'
+      format: '&aTip&f: %s'
       period: 900
       delay: 450
       shuffle: true
       console: true
     messages:
     - tips_forbeginners.txt
-  tips_foradmins:
+  adminmessages:
     enable: true
-    description: 'Tips for administrators.'
+    description: 'Reminders for administrators.'
     subscription_based:
       enable: true
       default: true
@@ -61,9 +56,9 @@ vendors:
       enable: true
       node: intermission.admin
     display:
-      format: '&aTip&f: %s'
+      format: '&aAdmin reminder&f: %s'
       period: 1800
-      shuffle: false
-      console: true
+      shuffle: true
+      console: false
     messages:
     - tips_foradmins.txt
