@@ -42,7 +42,7 @@ vendors:
       shuffle: true
       console: true
     messages:
-    - tips_forbeginners.txt
+    - tips.txt
   adminmessages:
     enable: true
     description: 'Reminders for administrators.'
@@ -61,4 +61,4 @@ vendors:
       shuffle: true
       console: false
     messages:
-    - tips_foradmins.txt
+    - adminmessages.txt
