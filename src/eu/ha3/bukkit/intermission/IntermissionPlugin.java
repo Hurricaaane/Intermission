@@ -86,24 +86,28 @@ public class IntermissionPlugin extends JavaPlugin
 		@Override
 		public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
 		{
-			if (!(sender instanceof Player))
-				return true;
-			
 			if (args.length == 0)
 				return false;
 			
-			Player player = (Player) sender;
-			ConfigPlayer ply = ensureConfigPlayer(player);
 			String vendorName = args[0];
-			
+			Vendor vendor = null;
 			if (IntermissionPlugin.this.vendors.containsKey(vendorName)
 				|| IntermissionPlugin.this.vendors.containsKey(vendorName.toLowerCase()))
 			{
-				Vendor vendor = IntermissionPlugin.this.vendors.get(vendorName);
+				vendor = IntermissionPlugin.this.vendors.get(vendorName);
 				if (vendor == null)
 				{
 					vendor = IntermissionPlugin.this.vendors.get(vendorName.toLowerCase());
 				}
+			}
+			
+			if (vendor == null)
+				return true;
+			
+			if (sender instanceof Player)
+			{
+				Player player = (Player) sender;
+				ConfigPlayer ply = ensureConfigPlayer(player);
 				
 				if (vendor.couldPlayerReceive(player))
 				{
@@ -136,6 +140,12 @@ public class IntermissionPlugin extends JavaPlugin
 					player.sendMessage(ChatColor.translateAlternateColorCodes(
 						'&', String.format(getConfig().getString("globalconfig.display.on_info_invalid"))));
 				}
+			}
+			else
+			{
+				sender.sendMessage(ChatColor.translateAlternateColorCodes('&', String.format(
+					getConfig().getString("globalconfig.display.on_info_forced"), vendor.getName(),
+					vendor.getDescription())));
 			}
 			
 			return true;
