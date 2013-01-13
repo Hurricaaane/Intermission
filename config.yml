@@ -2,7 +2,7 @@ globalconfig:
   enable: true
   display:
     on_subscribe: '&bYou are now subscribed to &f%s&b.'
-    on_unsubscribe: '&cYou are now unsubscribed from &f%s&b.'
+    on_unsubscribe: '&cYou are now unsubscribed from &f%s&c.'
     on_invalid: '&7You cannot perform this operation / You cannot change this subscription.'
     on_info_forced: '&7%s&f: %s'
     on_info_subbed: '&b%s&f: %s'
