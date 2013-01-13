@@ -36,12 +36,16 @@ public class Vendor implements Runnable
 		this.pointer = 0;
 		
 		loadMessages();
+		
 	}
 	
 	@Override
 	public void run()
 	{
-		displayNow();
+		if (this.plugin.getServer().getOnlinePlayers().length > 0)
+		{
+			displayNow();
+		}
 	}
 	
 	public void displayNow()
